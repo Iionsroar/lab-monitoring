@@ -1,6 +1,7 @@
 <!-- 
+DOING
 https://vuejs.org/tutorial/#step-2
-https://element-plus.org/en-US/component/form.html#inline-form
+https://quasar.dev/quasar-cli/installation CONTINUE @ `quasar create`
  -->
 
 <template>
