@@ -39,3 +39,14 @@ npm run lint
 - [examples](https://vuejs.org/examples/#handling-input)
 - [creating a vue app](https://vuejs.org/guide/essentials/application.html)
 - [awesome-vue](https://github.com/vuejs/awesome-vue)
+
+#### Quasar v2
+- [Configuring Quasar App](https://quasar.dev/quasar-cli-webpack/quasar-config-js)
+
+- [Quasar App Flow](https://quasar.dev/quasar-cli-webpack/boot-files#quasar-app-flow)
+
+  - [Boot Files](https://quasar.dev/quasar-cli-webpack/boot-files#usage-of-boot-files)
+
+- [Quasar Awesome](https://github.com/quasarframework/quasar-awesome)
+
+  
