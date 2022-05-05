@@ -6,26 +6,14 @@
 
 
 ## Frontend
-#### Setup
 Install dependencies
 ```sh
 npm install
 ```
 
-Compile and Hot-Reload for Development
+Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```sh
-npm run dev
-```
-
-Run Unit Tests with [Vitest](https://vitest.dev/)
-```sh
-npm run test:unit
-```
-
-Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-```sh
-npm run build
-npm run test:e2e # or `npm run test:e2e:ci` for headless testing
+quasar dev
 ```
 
 Lint with [ESLint](https://eslint.org/)
@@ -33,12 +21,26 @@ Lint with [ESLint](https://eslint.org/)
 npm run lint
 ```
 
+Format the files
+
+```sh
+npm run format
+```
+
+Build the app for production
+
+```sh
+quasar build
+```
+
+
+
 #### Vue JS 3
-- [quickstart](https://vuejs.org/guide/quick-start.html#with-build-tools)
-- [hands-on tutorial](https://vuejs.org/tutorial/#step-1)
-- [examples](https://vuejs.org/examples/#handling-input)
-- [creating a vue app](https://vuejs.org/guide/essentials/application.html)
-- [awesome-vue](https://github.com/vuejs/awesome-vue)
+
+- [Quickstart](https://vuejs.org/guide/quick-start.html#with-build-tools)
+- [Hands-on tutorial](https://vuejs.org/tutorial/#step-1)
+- [Examples](https://vuejs.org/examples/#handling-input)
+- [Vue Awesome](https://github.com/vuejs/awesome-vue)
 
 #### Quasar v2
 - [Configuring Quasar App](https://quasar.dev/quasar-cli-webpack/quasar-config-js)
