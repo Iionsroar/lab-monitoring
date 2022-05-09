@@ -1,10 +1,9 @@
 <template>
   <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+    <p class="text-h2">
+      Welcome<span v-if="user">,<br>{{name}}!</span>
+      <span v-else>!</span>
+    </p>
   </q-page>
 </template>
 
@@ -12,6 +11,22 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'IndexPage'
+  name: 'IndexPage',
+
+  data: function () {
+    return {
+      user: this.$auth0.user
+    }
+  },
+
+  computed: {
+    name: function () {
+      if (this.user.email) {
+        return this.user.email.split("@")[0].toUpperCase().replace(".", " ")
+      }
+      return ""
+    }
+  }
+
 })
 </script>

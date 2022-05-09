@@ -1,8 +1,17 @@
 # lab-monitoring
 
-![process](https://github.com/Iionsroar/lab-monitoring/blob/main/assets/process.png)
+![process](https://raw.githubusercontent.com/Iionsroar/lab-monitoring/main/assets/process.png)
 
-<br>
+
+
+## Auth0
+
+1. Create a [Vue Login App](https://auth0.com/docs/quickstart/spa/vuejs) via Auth0 website to manage logins of the frontend
+
+2. Follow quickstart instructions for [**configuring**](https://auth0.com/docs/quickstart/spa/vuejs#configure-auth0) your Auth0 App
+3. Get domain and client_id of your Auth0 app and store to .env (see .env.example inside the frontend directory)
+
+
 
 
 ## Frontend
@@ -35,6 +44,28 @@ quasar build
 
 
 
+## Modules
+
+- Login
+
+  - Admin/ Instructor Login
+
+  - Student Access
+
+- Dashboard
+
+  - Admin
+  - Instructor
+  - Student
+
+
+
+## Docs
+
+### Auth0
+
+- [User Profile Structure](https://auth0.com/docs/manage-users/user-accounts/user-profiles/user-profile-structure)
+
 #### Vue JS 3
 
 - [Quickstart](https://vuejs.org/guide/quick-start.html#with-build-tools)
@@ -44,11 +75,7 @@ quasar build
 
 #### Quasar v2
 - [Configuring Quasar App](https://quasar.dev/quasar-cli-webpack/quasar-config-js)
-
 - [Quasar App Flow](https://quasar.dev/quasar-cli-webpack/boot-files#quasar-app-flow)
-
-  - [Boot Files](https://quasar.dev/quasar-cli-webpack/boot-files#usage-of-boot-files)
-
+- [Boot Files](https://quasar.dev/quasar-cli-webpack/boot-files#usage-of-boot-files)
 - [Quasar Awesome](https://github.com/quasarframework/quasar-awesome)
 
-  

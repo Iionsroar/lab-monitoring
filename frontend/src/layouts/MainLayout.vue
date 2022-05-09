@@ -1,26 +1,30 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar>
+      <q-toolbar class="bg-blue-grey-9 q-py-sm">
         <q-btn
           flat
           dense
           round
           icon="menu"
+          class="q-mr-sm"
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
+
+        <q-avatar>
+          <img src="icons/rnd-favicon-2-128x123.png">
+        </q-avatar>
 
         <q-toolbar-title>
           Lab Monitoring
         </q-toolbar-title>
 
         <template v-if="user">
-          <div><q-avatar><img :src="user.picture" color="dark" alt="profile picture"/></q-avatar></div>
-          <div><button @click="logout">Log out</button></div>
+          <q-avatar color="white" text-color="blue-grey-9">{{ userNameInitial }}</q-avatar>
+          <q-btn flat color="white" @click="logout" label="Log out"/>
         </template>
-        <div v-else><button @click="login">Log in</button></div>
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn v-else flat color="white" @click="login" label="Log in"/>
       </q-toolbar>
     </q-header>
 
@@ -55,48 +59,49 @@ import { defineComponent, ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
+  // REFERENCE LINKS (NOTE COMMENT IN PRODUCTION)
   {
-    title: 'Docs',
+    title: 'Quasar',
     caption: 'quasar.dev',
     icon: 'school',
-    link: 'https://quasar.dev'
+    link: 'https://quasar.dev/vue-components/button'
   },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
+  // {
+  //   title: 'Discord Chat Channel',
+  //   caption: 'chat.quasar.dev',
+  //   icon: 'chat',
+  //   link: 'https://chat.quasar.dev'
+  // },
+  // {
+  //   title: 'Forum',
+  //   caption: 'forum.quasar.dev',
+  //   icon: 'record_voice_over',
+  //   link: 'https://forum.quasar.dev'
+  // },
+  // {
+  //   title: 'Twitter',
+  //   caption: '@quasarframework',
+  //   icon: 'rss_feed',
+  //   link: 'https://twitter.quasar.dev'
+  // },
   {
     title: 'Quasar Awesome',
     caption: 'Community Quasar projects',
     icon: 'favorite',
     link: 'https://awesome.quasar.dev'
-  }
+  },
+  {
+    title: 'Github',
+    caption: 'github.com/lab-monitoring',
+    icon: 'code',
+    link: 'https://github.com/Iionsroar/lab-monitoring'
+  },
+  {
+    title: 'Facebook',
+    caption: '@UECCSSRnDUnit',
+    icon: 'public',
+    link: 'https://www.facebook.com/UECCSSRnDUnit'
+  },
 ]
 
 export default defineComponent({
@@ -109,7 +114,16 @@ export default defineComponent({
   data: function () {
     return {
       user: this.$auth0.user
-    };
+    }
+  },
+
+  computed: {
+    userNameInitial() {
+      if (this.user.email) {
+        return this.user.email.charAt(0).toUpperCase()
+      }
+      return ""
+    }
   },
 
   methods: {
