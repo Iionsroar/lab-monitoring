@@ -1,6 +1,6 @@
 # lab-monitoring
 
-![process](https://raw.githubusercontent.com/Iionsroar/lab-monitoring/main/assets/process.png)
+![process](public/process.png)
 
 
 
@@ -13,8 +13,8 @@
 
 
 
-
 ## Frontend
+
 Install dependencies
 ```sh
 npm install
@@ -41,6 +41,8 @@ Build the app for production
 ```sh
 quasar build
 ```
+
+Customize the configuration, see [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
 
 
 
