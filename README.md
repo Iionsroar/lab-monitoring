@@ -7,9 +7,31 @@
 ## Auth0
 
 1. Create a [Vue Login App](https://auth0.com/docs/quickstart/spa/vuejs) via Auth0 website to manage logins of the frontend
-
 2. Follow quickstart instructions for [**configuring**](https://auth0.com/docs/quickstart/spa/vuejs#configure-auth0) your Auth0 App
 3. Get domain and client_id of your Auth0 app and store to .env (see .env.example inside the frontend directory)
+
+
+
+### Auth0 Config
+
+1. Rules
+
+   1. Add access control
+
+      - `Check if user email domain matches configured domain` (@ue.edu.ph)
+      -  `Set roles to a user`
+
+   2. Enrich profile
+
+      - `Add user roles from a SQL Server database`
+
+      - `Default picture for null avatars`
+
+      - `Enrich profile with the locations where the user logs in`
+
+   3. Webhook
+
+      - `Track Logins in MixPanel` or `Track Logins and signups with Splunk HEC`
 
 
 
@@ -57,6 +79,7 @@ Customize the configuration, see [Configuring quasar.config.js](https://v2.quasa
 - Dashboard
 
   - Admin
+    - check [auth0 rules](https://manage.auth0.com/dashboard/us/dev-y19lra5e/rules)
   - Instructor
   - Student
 
