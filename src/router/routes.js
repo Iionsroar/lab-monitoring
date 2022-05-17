@@ -4,8 +4,14 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
+      { path: '', component: () => import('pages/IndexPage.vue') },
+      { path: 'dashboard', component: () => import('pages/DashboardPage.vue') },
     ]
+  },
+
+  {
+    path: '/user-unverified',
+    component: () => import('pages/UserUnverified.vue')
   },
 
   // Always leave this as last one,

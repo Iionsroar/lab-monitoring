@@ -2,6 +2,9 @@
 
 ![process](public/process.png)
 
+- ? admin adds instructor emails to whitelist
+- ? instructor adds student emails to whitelist
+
 
 
 ## Auth0
@@ -9,17 +12,20 @@
 1. Create a [Vue Login App](https://auth0.com/docs/quickstart/spa/vuejs) via Auth0 website to manage logins of the frontend
 2. Follow quickstart instructions for [**configuring**](https://auth0.com/docs/quickstart/spa/vuejs#configure-auth0) your Auth0 App
 3. Get domain and client_id of your Auth0 app and store to .env (see .env.example inside the frontend directory)
+4. Go to `Dashboard > User Management > Roles` and create the following roles:
+   - `Teacher` - Supervises activities during a laboratory session 
+   - `Student` - Interacts with laboratory materials for learning purposes
+5. Go to `Dashboard > Auth Pipeline > Rules`, and create the rule:
+   - `Access Control > Whitelist` - this is where the admin (auth0 app creator) will add teacher emails to enable access to the lab-monitoring app.
 
-
-
-### Auth0 Config
+#### Config
 
 1. Rules
 
    1. Add access control
 
       - `Check if user email domain matches configured domain` (@ue.edu.ph)
-      -  `Set roles to a user`
+      - `Set roles to a user`
 
    2. Enrich profile
 
@@ -68,20 +74,11 @@ Customize the configuration, see [Configuring quasar.config.js](https://v2.quasa
 
 
 
-## Modules
+## In Production
 
-- Login
+### Google-oauth2
 
-  - Admin/ Instructor Login
-
-  - Student Access
-
-- Dashboard
-
-  - Admin
-    - check [auth0 rules](https://manage.auth0.com/dashboard/us/dev-y19lra5e/rules)
-  - Instructor
-  - Student
+1. Configure keys: replace Auth0 development key with own key via `App Dashboard > Social`  
 
 
 
@@ -91,16 +88,21 @@ Customize the configuration, see [Configuring quasar.config.js](https://v2.quasa
 
 - [User Profile Structure](https://auth0.com/docs/manage-users/user-accounts/user-profiles/user-profile-structure)
 
-#### Vue JS 3
+### Vue JS 3
 
 - [Quickstart](https://vuejs.org/guide/quick-start.html#with-build-tools)
 - [Hands-on tutorial](https://vuejs.org/tutorial/#step-1)
 - [Examples](https://vuejs.org/examples/#handling-input)
 - [Vue Awesome](https://github.com/vuejs/awesome-vue)
 
-#### Quasar v2
+### Quasar v2
+
 - [Configuring Quasar App](https://quasar.dev/quasar-cli-webpack/quasar-config-js)
 - [Quasar App Flow](https://quasar.dev/quasar-cli-webpack/boot-files#quasar-app-flow)
 - [Boot Files](https://quasar.dev/quasar-cli-webpack/boot-files#usage-of-boot-files)
 - [Quasar Awesome](https://github.com/quasarframework/quasar-awesome)
 
+### JavaScript ES6
+
+- [Pretty print](https://stackoverflow.com/questions/18184559/how-to-pretty-print-log-output-in-chrome-devtools-console)
+- 

@@ -21,12 +21,18 @@
         </q-toolbar-title>
 
         <template v-if="user">
-          <q-avatar color="white" text-color="blue-grey-9">{{ userNameInitial }}</q-avatar>
+          <q-avatar color="white">
+            <img :src="user.picture" alt="Profile Picture">
+            <p class="hidden">{{ userNameInitial }}</p> <!-- NOTE for testing purposes -->
+          </q-avatar>
+          <!-- <q-avatar color="white" text-color="blue-grey-9">{{ userNameInitial }}</q-avatar> -->
           <q-btn flat color="white" @click="logout" label="Log out"/>
         </template>
         <q-btn v-else flat color="white" @click="login" label="Log in"/>
       </q-toolbar>
+
     </q-header>
+
 
     <q-drawer
       v-model="leftDrawerOpen"
@@ -51,6 +57,15 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <q-footer v-if="user">
+      <q-banner v-if="!user.email_verified" dense inline-actions class="text-dark bg-blue-grey-2">
+        You still haven't verified your email.
+        <template v-slot:action>
+          <q-btn flat @click="verify" label="Verify Email" />
+        </template>
+      </q-banner>
+    </q-footer>
   </q-layout>
 </template>
 
@@ -120,6 +135,7 @@ export default defineComponent({
   computed: {
     userNameInitial() {
       if (this.user.email) {
+        console.log(JSON.stringify(this.user, null, 4))
         return this.user.email.charAt(0).toUpperCase()
       }
       return ""
@@ -132,7 +148,10 @@ export default defineComponent({
     },
     logout () {
       this.$auth0.logout({ returnTo: window.location.origin })
-    }
+    },
+    verify () {
+      window.open("https://mail.google.com/", "_blank")
+    },
   },
 
   setup () {
