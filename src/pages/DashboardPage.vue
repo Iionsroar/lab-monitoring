@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <q-banner class="text-white bg-blue-grey-5">
+    <q-banner v-if="user" class="text-white bg-blue-grey-5">
       Welcome back {{name}}!
     </q-banner>
 

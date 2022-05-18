@@ -43,7 +43,7 @@
         <q-item-label
           header
         >
-          Essential Links
+          Explore
         </q-item-label>
 
         <EssentialLink
@@ -78,27 +78,21 @@ const linksList = [
   {
     title: 'Quasar',
     caption: 'quasar.dev',
-    icon: 'school',
+    icon: 'insights',
     link: 'https://quasar.dev/vue-components/button'
   },
-  // {
-  //   title: 'Discord Chat Channel',
-  //   caption: 'chat.quasar.dev',
-  //   icon: 'chat',
-  //   link: 'https://chat.quasar.dev'
-  // },
-  // {
-  //   title: 'Forum',
-  //   caption: 'forum.quasar.dev',
-  //   icon: 'record_voice_over',
-  //   link: 'https://forum.quasar.dev'
-  // },
-  // {
-  //   title: 'Twitter',
-  //   caption: '@quasarframework',
-  //   icon: 'rss_feed',
-  //   link: 'https://twitter.quasar.dev'
-  // },
+  {
+    title: 'VueJS 3',
+    caption: 'vuejs3.dev',
+    icon: 'fullscreen',
+    link: 'https://vuejs.org/tutorial/#step-1'
+  },
+  {
+    title: 'Auth0',
+    caption: 'auth.dev',
+    icon: 'fullscreen',
+    link: 'https://vuejs.org/tutorial/#step-1'
+  },
   {
     title: 'Quasar Awesome',
     caption: 'Community Quasar projects',
@@ -143,6 +137,13 @@ export default defineComponent({
   },
 
   methods: {
+    goToDashboard() {
+      if (this.user) {
+        this.$router.push('/dashboard')
+      } else {
+        this.$router.push('/')
+      }
+    },
     login () {
       this.$auth0.loginWithRedirect();
     },
@@ -164,6 +165,9 @@ export default defineComponent({
         leftDrawerOpen.value = !leftDrawerOpen.value
       }
     }
+  },
+  mounted () {
+    this.goToDashboard()
   }
 })
 </script>

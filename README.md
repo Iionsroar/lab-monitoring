@@ -93,7 +93,10 @@ Customize the configuration, see [Configuring quasar.config.js](https://v2.quasa
 - [Quickstart](https://vuejs.org/guide/quick-start.html#with-build-tools)
 - [Hands-on tutorial](https://vuejs.org/tutorial/#step-1)
 - [Examples](https://vuejs.org/examples/#handling-input)
+- [Vue Router](https://router.vuejs.org/guide/#javascript)
+- [[Article] Vue Lifecycle Hooks](https://michaelnthiessen.com/call-method-on-page-load/)
 - [Vue Awesome](https://github.com/vuejs/awesome-vue)
+- [History Modes, e.g.: http://localhost:9000/#/dashboard](https://router.vuejs.org/guide/essentials/history-mode.html)
 
 ### Quasar v2
 
@@ -105,4 +108,7 @@ Customize the configuration, see [Configuring quasar.config.js](https://v2.quasa
 ### JavaScript ES6
 
 - [Pretty print](https://stackoverflow.com/questions/18184559/how-to-pretty-print-log-output-in-chrome-devtools-console)
-- 
+
+### Material Icons
+
+- https://fonts.google.com/icons?selected=Material+Icons

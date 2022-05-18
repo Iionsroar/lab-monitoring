@@ -1,5 +1,6 @@
 <template>
-  <q-page class="flex flex-center">
+  <!-- <q-page class="flex flex-center"> -->
+  <q-page :style="bgImg" class="flex flex-center">
     <p class="text-h2">
       Welcome<span v-if="user">,<br>{{name}}!</span>
       <span v-else>!</span>
@@ -15,7 +16,8 @@ export default defineComponent({
 
   data: function () {
     return {
-      user: this.$auth0.user
+      user: this.$auth0.user,
+      bgImg: { backgroundImage: "url(bg-white.png)" },
     }
   },
 
