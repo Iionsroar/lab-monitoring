@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="lHh lpR fFf">
+    <q-header elevated height-hint="98">
       <q-toolbar class="bg-blue-grey-9 q-py-sm">
         <q-btn
           flat
@@ -20,6 +20,7 @@
           Lab Monitoring
         </q-toolbar-title>
 
+
         <template v-if="user">
           <q-avatar color="white">
             <img :src="user.picture" alt="Profile Picture">
@@ -29,8 +30,20 @@
           <q-btn flat color="white" @click="logout" label="Log out"/>
         </template>
         <q-btn v-else flat color="white" @click="login" label="Log in"/>
+
       </q-toolbar>
 
+      <q-tabs 
+        inline-label 
+        v-model="tab"
+        v-if="user"
+        class="bg-blue-grey-9" 
+        align="left"
+      >
+        <q-route-tab to="/dashboard" name="lab-report" icon="assessment" label="Lab Report" />
+        <q-route-tab to="/my-courses" name="my-courses" icon="history_edu" label="My Courses" />
+        <q-route-tab to="/monitor-lab" name="monitor-lab" icon="track_changes" label="Monitor Lab" />
+      </q-tabs>
     </q-header>
 
 
@@ -44,7 +57,7 @@
         <q-item-label
           header
         >
-          Explore
+          Development
         </q-item-label>
 
         <EssentialLink
@@ -123,7 +136,8 @@ export default defineComponent({
 
   data: function () {
     return {
-      user: this.$auth0.user
+      user: this.$auth0.user,
+      tab: ref('lab-report'), // start tab at name=lab-report
     }
   },
 

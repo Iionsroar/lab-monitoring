@@ -2,10 +2,17 @@
 
 ![process](public/process.png)
 
-- ? admin adds instructor emails to whitelist
-- ? instructor adds student emails to whitelist
-
-
+##### Index Page
+![process](public/screenshots/index-page.png)
+##### Authentication Page
+![process](public/screenshots/auth-page.png)
+##### Dashboard
+![process](public/screenshots/dashboard.png)
+##### My Courses
+![process](public/screenshots/my-courses.png)
+##### Monitor Lab
+![process](public/screenshots/monitor-lab.png)
+<br>
 
 ## Auth0
 
@@ -39,6 +46,9 @@
 
       - `Track Logins in MixPanel` or `Track Logins and signups with Splunk HEC`
 
+
+- ? admin adds instructor emails to whitelist
+- ? instructor adds student emails to whitelist
 
 
 ## Frontend
