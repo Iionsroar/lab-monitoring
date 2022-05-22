@@ -35,6 +35,7 @@
 
 
     <q-drawer
+      class="bg-blue-grey-1"
       v-model="leftDrawerOpen"
       show-if-above
       bordered

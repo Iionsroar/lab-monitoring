@@ -1,10 +1,15 @@
 <template>
-  <!-- <q-page class="flex flex-center"> -->
-  <q-page :style="bgImg" class="flex flex-center">
-    <p class="text-h2">
-      Welcome<span v-if="user">,<br>{{name}}!</span>
-      <span v-else>!</span>
-    </p>
+  <q-page :style="bgImg" class="flex q-pa-lg" style="min-height: 744px;">
+    <div class="q-mb-xl q-ml-xl text-blue-grey-8">
+      <div class="row text-weight-medium text-uppercase" style="letter-spacing: 10px; font-size: 100px; margin-top: 15%">Welcome</div>
+
+      <div class="row" style="font-size: 22px; letter-spacing: 2px;">
+        <div class="col">UE CCSS R&D</div>
+        <div class="col-6">Laboratory Monitoring</div>
+      </div>
+
+      <div style="position: absolute; left: 5%; bottom: 6%; font-family: 'SourceHanSansCN'; font-size: 18px">Coordinate with your teacher or administrator to get access to the application</div>
+    </div>
   </q-page>
 </template>
 
