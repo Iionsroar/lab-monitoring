@@ -24,7 +24,7 @@
         <template v-if="user">
           <q-avatar color="white">
             <img :src="user.picture" alt="Profile Picture">
-            <p class="hidden">{{ userNameInitial }}</p> <!-- NOTE for testing purposes -->
+            <!-- <p class="hidden">{{ userNameInitial }}</p> NOTE for testing purposes --> -->
           </q-avatar>
           <!-- <q-avatar color="white" text-color="blue-grey-9">{{ userNameInitial }}</q-avatar> -->
           <q-btn flat color="white" @click="logout" label="Log out"/>
@@ -44,8 +44,8 @@
         <q-route-tab to="/my-courses" name="my-courses" icon="history_edu" label="My Courses" />
         <q-route-tab to="/monitor-lab" name="monitor-lab" icon="track_changes" label="Monitor Lab" />
       </q-tabs>
+      <p class="hidden" v-else>{{ userNameInitial }}</p>
     </q-header>
-
 
     <q-drawer
       class="bg-blue-grey-1"
@@ -84,7 +84,8 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
+import { computed, defineComponent, ref } from 'vue'
+import { useRoute } from 'vue-router'
 import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
@@ -94,6 +95,12 @@ const linksList = [
     caption: 'quasar.dev',
     icon: 'insights',
     link: 'https://quasar.dev/vue-components/button'
+  },
+  {
+    title: 'Quasar Colors',
+    caption: 'quasar.color',
+    icon: 'insights',
+    link: 'https://quasar.dev/style/color-palette'
   },
   {
     title: 'VueJS 3',
@@ -134,7 +141,7 @@ export default defineComponent({
     EssentialLink
   },
 
-  data: function () {
+  data() {
     return {
       user: this.$auth0.user,
       tab: ref('lab-report'), // start tab at name=lab-report
@@ -143,20 +150,25 @@ export default defineComponent({
 
   computed: {
     userNameInitial() {
-      if (this.user.email) {
-        console.log(JSON.stringify(this.user, null, 4))
+      if (this.user) {
         return this.user.email.charAt(0).toUpperCase()
       }
+      this.goToIndex()
       return ""
     }
   },
 
   methods: {
-    goToDashboard() {
-      if (this.user) {
+    goToIndex() {
+      const route = useRoute()
+      const path = computed(() => route.path)
+
+      if (!this.user) {
+        this.$router.push('/')
+      } else if (route.path == '/') {
         this.$router.push('/dashboard')
       } else {
-        this.$router.push('/')
+        this.$router.push(path)
       }
     },
     login () {
@@ -181,8 +193,13 @@ export default defineComponent({
       }
     }
   },
-  mounted () {
-    this.goToDashboard()
-  }
+
+  updated() {
+    this.goToIndex()
+  },
+
+  mounted() {
+    this.goToIndex()
+  },
 })
 </script>

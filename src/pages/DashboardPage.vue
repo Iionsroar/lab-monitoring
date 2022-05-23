@@ -5,7 +5,7 @@
       <q-card class="my-card">
         <q-card-section>
           <div class="text-h6">Lab Session #1: Template (Test)</div>
-          <div class="text-subtitle2">by {{name}}</div>
+          <div class="text-subtitle2">by {{user.name}}</div>
         </q-card-section>
 
         <q-markup-table>
@@ -79,7 +79,7 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'DashboardPage',
 
-  data: function () {
+  data () {
     return {
       user: this.$auth0.user,
       bgImg: { backgroundImage: "url(bg-white.png)" },
@@ -87,12 +87,14 @@ export default defineComponent({
   },
 
   computed: {
-    name: function () {
-      if (this.user.email) {
-        return this.user.email.split("@")[0].toUpperCase().replace(".", " ")
-      }
-      return ""
-    }
+    // name: function () {
+    //   // compute only when this.user.email becomes accessible
+    //   // produces errors otherwise
+    //   if (this.user.email) {
+    //     return this.user.email.split("@")[0].toUpperCase().replace(".", " ")
+    //   }
+    //   return ""
+    // }
   }
 
 })

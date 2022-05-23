@@ -2,15 +2,19 @@
 
 ![process](public/process.png)
 
-##### Index Page
+<br>
+
+## Screenshots
+
+#### Index Page
 ![process](public/screenshots/index-page.png)
-##### Authentication Page
+#### Authentication Page
 ![process](public/screenshots/auth-page.png)
-##### Dashboard
+#### Dashboard
 ![process](public/screenshots/dashboard.png)
-##### My Courses
+#### My Courses
 ![process](public/screenshots/my-courses.png)
-##### Monitor Lab
+#### Monitor Lab
 ![process](public/screenshots/monitor-lab.png)
 <br>
 
@@ -50,6 +54,7 @@
 - ? admin adds instructor emails to whitelist
 - ? instructor adds student emails to whitelist
 
+<br>
 
 ## Frontend
 
@@ -82,7 +87,7 @@ quasar build
 
 Customize the configuration, see [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
 
-
+<br>
 
 ## In Production
 
@@ -90,9 +95,9 @@ Customize the configuration, see [Configuring quasar.config.js](https://v2.quasa
 
 1. Configure keys: replace Auth0 development key with own key via `App Dashboard > Social`  
 
+<br>
 
-
-## Docs
+## Resources
 
 ### Auth0
 

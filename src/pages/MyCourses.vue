@@ -55,6 +55,42 @@ const linksList = [
     icon: 'public',
     link: 'https://www.facebook.com/UECCSSRnDUnit'
   },
+  {
+    name: 'Quasar (Test)',
+    code: 'CCQ_1101',
+    icon: 'insights',
+    link: 'https://quasar.dev/vue-components/button'
+  },
+  {
+    name: 'VueJS 3 (Test)',
+    code: 'CCV_1101',
+    icon: 'fullscreen',
+    link: 'https://vuejs.org/tutorial/#step-1'
+  },
+  {
+    name: 'Auth0 (Test)',
+    code: 'CCA_1101',
+    icon: 'fullscreen',
+    link: 'https://vuejs.org/tutorial/#step-1'
+  },
+  {
+    name: 'Quasar Awesome (Test)',
+    code: 'CCQ_1102',
+    icon: 'favorite',
+    link: 'https://awesome.quasar.dev'
+  },
+  {
+    name: 'Github (Test)',
+    code: 'CCG_1101',
+    icon: 'code',
+    link: 'https://github.com/Iionsroar/lab-monitoring'
+  },
+  {
+    name: 'Facebook (Test)',
+    code: 'CCF_1101',
+    icon: 'public',
+    link: 'https://www.facebook.com/UECCSSRnDUnit'
+  },
 ]
 
 export default defineComponent({
@@ -64,13 +100,12 @@ export default defineComponent({
     CourseItem
   },
 
-  data: function () {
+  data () {
     return {
       user: this.$auth0.user,
       essentialLinks: linksList,
       bgImg: { backgroundImage: "url(bg-white.png)" },
     }
   },
-
 })
 </script>
