@@ -1,6 +1,6 @@
 <!-- TODO -->
 <template>
-  <q-page :style="bgImg">
+  <q-page v-if="user" :style="bgImg">
     <div class="q-pa-lg">
       <q-card class="my-card">
         <q-card-section>
